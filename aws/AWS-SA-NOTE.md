@@ -75,7 +75,15 @@
 
 ### Amazon FSx
 
-### Storage Gateway
-
 ### CloudFormation
 - CloudFormation StackSets nâng cao hơn của stack, cho phép deploy cùng 1 template tới nhiều account trong nhiều regions khác nhau, đảm bảo tính đồng nhất
+
+### Storage Gateway
+- Gồm 3 loại: File Gateway (support giao thức SMB và NFS), Volumn Gateway và Tape Gateway
+- Dữ liệu sẽ được lưu xuống S3
+
+### Transfer Family
+- Chỉ cho phép truyền file tới S3 và EFS
+
+### DataSync
+- Cho phép truyền file tới nhiều service: S3, EFS, FSx for Windows File Server, CloudWatch, CloudTrail
