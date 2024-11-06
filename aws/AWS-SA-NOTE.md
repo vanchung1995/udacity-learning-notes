@@ -3,6 +3,8 @@
 ## Networking & VPC, Subnet
 
 ## EC2
+- EBS gắn liền với EC2
+- EFS chỉ tương thích với Linux, không dùng cho Windows
 
 ## S3
 - S3 mặc định cung cấp strong consistency cho tất cả các thao tác ghi và đọc (read after write), nghĩa là nếu ghi xong rồi thì sẽ luôn thấy kết quả mới
@@ -33,6 +35,9 @@
 ## KMS
 
 ## Route53
+
+## CloudFront
+- CloudFront cho performance tốt hơn Global Accelerator nhưng chỉ phù hợp cho http/https. Global Accelerator phù hợp cho udp/tcp
 
 ## AWS Config, Parameter Store, Secret Manager
 ### Parameter Store
@@ -71,3 +76,6 @@
 ### Amazon FSx
 
 ### Storage Gateway
+
+### CloudFormation
+- CloudFormation StackSets nâng cao hơn của stack, cho phép deploy cùng 1 template tới nhiều account trong nhiều regions khác nhau, đảm bảo tính đồng nhất
