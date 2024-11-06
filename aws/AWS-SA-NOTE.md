@@ -5,6 +5,7 @@
 ## EC2
 - EBS gắn liền với EC2
 - EFS chỉ tương thích với Linux, không dùng cho Windows
+- Elastic Network Interface (ENI) chỉ đơn giản là card mạng bt, ko tối ưu cho HPC, Elastic Network Adapter (ENA) thì xịn hơn ENI, Elastic Fabric Adapter xịn nhất trong họ
 
 ## S3
 - S3 mặc định cung cấp strong consistency cho tất cả các thao tác ghi và đọc (read after write), nghĩa là nếu ghi xong rồi thì sẽ luôn thấy kết quả mới
