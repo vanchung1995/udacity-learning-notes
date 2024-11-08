@@ -9,10 +9,10 @@
 - SG rule có thể reference bằng IP hoặc SG khác
 
 ## EC2
+- Spot instance có thể bị thu hồi hàng giờ vì thay đổi spot price, có thể dùng Spot Block để ngăn interrupt từ 1 tới 6h
 - Instance store là storage gắn liền với hardware của EC2 nên chạy nhanh nhưng chỉ lưu dữ liệu tạm thời và dễ dàng bị mất. EBS và EFS phải attach qua mạng nên chậm hơn
 - User data được chạy lần boot đầu tiên với quyền root
-- EBS gắn liền với EC2
-- EFS chỉ tương thích với Linux, không dùng cho Windows
+- EBS gắn liền với EC2, EFS chỉ tương thích với Linux, không dùng cho Windows. EFS dùng SG để điều khiển truy cập, được encrypt bởi KMS
 - Elastic Network Interface (ENI) chỉ đơn giản là card mạng bt, ko tối ưu cho HPC, Elastic Network Adapter (ENA) thì xịn hơn ENI, Elastic Fabric Adapter xịn nhất trong họ
 
 ## S3
