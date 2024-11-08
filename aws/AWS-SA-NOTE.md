@@ -1,8 +1,16 @@
 ## IAM
+### IAM Security Tools Audit:
+- IAM Credentials Report (account-level): cho phép xem tất cả status của các user trong cùng account
+- IAM Access Advisor (user-level): Show chi tiết các permission được gán cho user, được dùng để check policy
 
 ## Networking & VPC, Subnet
+- NACL là stateless, nghĩa là cho phép inbound thì cũng phải cho phép luôn outbound, còn Security Group là statefull, cho phép inbound thì tự động cho outbound luôn
+- NACL có deny và allow rule, thứ tự duyệt từ trên xuống dưới, rule nào có số nhỏ hơn sẽ được ưu tiên hơn. SG thì chỉ cho phép allow rule, và sẽ là union của các rule này
+- SG rule có thể reference bằng IP hoặc SG khác
 
 ## EC2
+- Instance store là storage gắn liền với hardware của EC2 nên chạy nhanh nhưng chỉ lưu dữ liệu tạm thời và dễ dàng bị mất. EBS và EFS phải attach qua mạng nên chậm hơn
+- User data được chạy lần boot đầu tiên với quyền root
 - EBS gắn liền với EC2
 - EFS chỉ tương thích với Linux, không dùng cho Windows
 - Elastic Network Interface (ENI) chỉ đơn giản là card mạng bt, ko tối ưu cho HPC, Elastic Network Adapter (ENA) thì xịn hơn ENI, Elastic Fabric Adapter xịn nhất trong họ
@@ -22,7 +30,6 @@
   - Fifo xử lý có thứ tự, đảm bảo exact 1 message
   - Không thể convert Standard về fifo mà phải xóa đi tạo mới, fifo queue phải có suffix .fifo
 ### SNS
-
 ##### SNS cơ chế là push, tức là consumer sẵn sàng, có là xử lý luôn, còn SQS cơ chế pull, nghĩa là data cứ được lưu mãi trong queue cho tới khi hết hạn hoặc có consumer chủ động kéo về
 
 ## Cloudwatch
