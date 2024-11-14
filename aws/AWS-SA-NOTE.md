@@ -73,6 +73,7 @@
 ## EventBridge 
 - Là service quản lý event một cách hiệu quả, nhận event từ nhiều nguồn và đưa vào bus, có thể dựa vào rule để đưa tới các đích như sqs, sns, Kinesis Data Firehose, lambda
 - SQS chỉ là 1 hàng đợi task, sns là dịch vụ thông báo, nằm ở giữa producer và consumer, còn eventbridge giống như 1 ông nằm ngay sau producer giúp lọc các event vào các bus tương ứng, sqs và sns sẽ nhận event từ các bus này
+- Support 3rd party
   
 ## KMS
 - Khi xóa KMS, chỉ bị xóa tạm thời, ở trong trạng thái PENDING và có thể cancel trong vòng 30 ngày để lấy lại
