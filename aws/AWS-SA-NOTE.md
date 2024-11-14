@@ -135,5 +135,10 @@
 - Tạo 1 kết nối chung giữa nhiều môi trường on prem và AWS thay vì nhiều kết nối site to site
 - Chỉ là 1 cách kết nối mạng, không tối ưu cho performance
 
+### Snow Family
+- Snowcone support 8TB
+- Snowball sp 80TB, hỗ trợ cluster
+- Snowmobile sp 10PB
+
 ### CloudFormation
 - CloudFormation StackSets nâng cao hơn của stack, cho phép deploy cùng 1 template tới nhiều account trong nhiều regions khác nhau, đảm bảo tính đồng nhất
