@@ -3,6 +3,10 @@
 - IAM Credentials Report (account-level): cho phép xem tất cả status của các user trong cùng account
 - IAM Access Advisor (user-level): Show chi tiết các permission được gán cho user, được dùng để check policy
 
+### Cognito
+- Cognito User Pools hỗ trợ user bên ngoài đăng ký, đăng nhập qua username/pass hoặc qua 3rd party
+- Amazon Cognito Identity Pools cho phép user bên trong AWS sử dụng các service của AWS
+
 ## Networking & VPC, Subnet
 - NACL là stateless, nghĩa là cho phép inbound thì cũng phải cho phép luôn outbound, còn Security Group là statefull, cho phép inbound thì tự động cho outbound luôn
 - NACL có deny và allow rule, thứ tự duyệt từ trên xuống dưới, rule nào có số nhỏ hơn sẽ được ưu tiên hơn. SG thì chỉ cho phép allow rule, và sẽ là union của các rule này
@@ -20,14 +24,22 @@
 - Simple scaling, step scaling: Nếu CPU trung bình là 30% thì tăng thêm 1 instance, nếu là 70% thì tăng thêm 3 instance
 - Cơ chế scale in là xóa instance ở AZ có nhiều instance hơn để đảm bảo tính balance và high avaibility
 
+### Launch Template/ Launch Configuration
+- Launch Template là version mới hơn, hỗ trợ các spot instance và on demand
+- 
+
 ## S3
 - S3 mặc định cung cấp strong consistency cho tất cả các thao tác ghi và đọc (read after write), nghĩa là nếu ghi xong rồi thì sẽ luôn thấy kết quả mới
 - S3 support 3,500 PUT/COPY/POST/DELETE or 5,500 GET/HEAD requests per second per prefix in a bucket.
 - Các version khác nhau của cùng 1 object có thể có các retention khác nhau. Mặc định retention period được chỉ định là khoảng thời gian (bao nhiêu ngày), còn khi chỉ định cụ thể phải dùng Retain Until Date
+- S3 object mặc định được own bới người upload chứ không phải người tạo bucket nên mặc định người tạo bucket sẽ không có quyền với object được upload bởi người khác
 
 ## RDS
 - Amazon RDS không cho phép custom OS, muốn custom phải dùng Amazon RDS Custom
 - Read replicate là asynchronous, multi AZ là synchronous trong 1 AZ, Cross-AZ, or Cross-Region
+- RDS cho phép enable storage autoscaling để tự động tăng dung lượng
+- Read replicate cần thay đổi endpoint để trỏ tới
+- 
 
 ## Database
 
@@ -92,7 +104,7 @@
 - Cho phép tạo custom rule để kiểm tra cấu hình có tuân thủ không để gửi noti nếu vi phạm
 
 ## WAF/Shield/
-- WAF hỗ trợ chặn request theo vị trí địa lý
+- WAF hỗ trợ chặn request theo vị trí địa lý, hỗ trợ IP match để block IP
 
 ## Các service khác  
 ### GuardDuty
@@ -125,7 +137,8 @@
 - Chỉ cho phép truyền file tới S3 và EFS
 
 ### DataSync
-- Cho phép truyền file tới nhiều service: S3, EFS, FSx for Windows File Server, CloudWatch, CloudTrail
+- Cho phép truyền file tới nhiều service: S3, EFS, FSx for Windows File Server, CloudWatch, CloudTrail, giữa onprem và AWS hoặc giữa các service AWS
+- Hỗ trợ chuyển data tới rất nhiều service
 
 ### Direct Connect
 - Mất 1 tháng để thực hiện kết nối vật lý từ on prem lên AWS, đảm bảo đường truyền tốc độ nhanh vì dùng mạng AWS thay vì internet
