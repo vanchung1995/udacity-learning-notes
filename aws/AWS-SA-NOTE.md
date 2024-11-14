@@ -76,6 +76,9 @@
   
 ## KMS
 - Khi xóa KMS, chỉ bị xóa tạm thời, ở trong trạng thái PENDING và có thể cancel trong vòng 30 ngày để lấy lại
+- Được tích hợp với CloudTrail để audit
+- Không thể convert từ single region key sang multi region key
+- Không thể share KMS key giữa các region
 
 ## Route53
 - Geolocation: Chỉ định client ở location nào sẽ được trỏ tới IP nào
@@ -155,3 +158,11 @@
 
 ### CloudFormation
 - CloudFormation StackSets nâng cao hơn của stack, cho phép deploy cùng 1 template tới nhiều account trong nhiều regions khác nhau, đảm bảo tính đồng nhất
+
+## AWS Organization
+- Để chuyển 1 account từ org A sang B, cần xóa acc khỏi A, gửi lời mời từ B và chấp nhận lời mời
+
+## Chi phí
+- Có chi phí chuyển data giữa các region
+- S3 upload dùng SATA thì chỉ tính phần được tăng tốc, upload thường không mất phí
+- S3 download mất phí
